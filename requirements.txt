@@ -1,4 +1,5 @@
 openai
+requests
 python-dotenv
-python-telegram-bot
 serpapi
+python-telegram-bot
