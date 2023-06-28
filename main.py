@@ -31,11 +31,16 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     global place, setplace_cond
     place = None
     setplace_cond = False
-    await update.message.reply_text('Hello there! I\'m a world guide. Just type /setplace to start!')
+    await update.message.reply_text('Hello there! I\'m a world guide. Here is a quick instruction:\n\
+1. /setplace to start;\n\
+2. If you selected someplace, /pictures to get the pictures of that place \
+and /weather to get the current weather of the place.')
 
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text('Type /setplace to choose a place with whose guide you want to talk with')
+    await update.message.reply_text('Type /setplace to choose a place with whose guide you want to talk with\n\
+If you already chose a place, /pictures to get the pictures of the place \
+and /weather to get the current weather of the place.')
 
 
 async def setplace_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
