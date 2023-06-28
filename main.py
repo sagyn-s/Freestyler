@@ -73,7 +73,7 @@ async def pictures_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await context.bot.send_message(chat_id=update.message.chat_id, text=message_text)
         await context.bot.send_media_group(chat_id=update.message.chat_id, media=media_group)
     else:
-        await update.message.reply_text('Type /setplace to choose a place before you ask pictures')
+        await update.message.reply_text('Type /setplace to choose a place before you ask for pictures')
 
 
 async def weather_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -95,7 +95,7 @@ async def weather_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         message = f"Temperature: {temperature_celsius} celsuis\nWind: {wind}\n{weather}"
         await context.bot.send_message(chat_id=update.message.chat_id, text=message)
     else:
-        await update.message.reply_text('Type /setplace to choose a place before you ask pictures')
+        await update.message.reply_text('Type /setplace to choose a place before you ask about the weather')
 
 
 def handle_response(text):
