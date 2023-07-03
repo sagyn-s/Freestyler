@@ -46,6 +46,7 @@ and /weather to get the current weather of the place.')
 
 async def setplace_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     global setplace_cond
+    user_prev_responses[update.message.chat.id] = []
     setplace_cond = True
     await update.message.reply_text('Type some place with whose guide you want to talk with')
 
