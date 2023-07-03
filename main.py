@@ -80,7 +80,7 @@ async def pictures_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def weather_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if place is not None:
         params = {
-            "q": "nyc weather",
+            "q": place + " weather",
             "hl": "en",
             "gl": "us",
             "google_domain": "google.com",
