@@ -158,20 +158,12 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         response: str = handle_response(text, update.message.chat.id)
     print('Bot:', response)
-    if user_prev_responses.get(update.message.chat.id) is None:
-        user_prev_responses[update.message.chat.id] = []
-        user_prev_responses[update.message.chat.id].append(text)
-    else:
-        if len(user_prev_responses[update.message.chat.id]) == 6:
-            user_prev_responses[update.message.chat.id].pop(0)
-        user_prev_responses[update.message.chat.id].append(text)
-    if user_prev_responses.get(update.message.chat.id) is None:
-        user_prev_responses[update.message.chat.id] = []
-        user_prev_responses[update.message.chat.id].append(response)
-    else:
-        if len(user_prev_responses[update.message.chat.id]) == 6:
-            user_prev_responses[update.message.chat.id].pop(0)
-        user_prev_responses[update.message.chat.id].append(response)
+    if len(user_prev_responses[update.message.chat.id]) == 6:
+        user_prev_responses[update.message.chat.id].pop(0)
+    user_prev_responses[update.message.chat.id].append(text)
+    if len(user_prev_responses[update.message.chat.id]) == 6:
+        user_prev_responses[update.message.chat.id].pop(0)
+    user_prev_responses[update.message.chat.id].append(response)
     await update.message.reply_text(response)
 
 
